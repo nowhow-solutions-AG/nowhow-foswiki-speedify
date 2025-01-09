@@ -1,0 +1,58 @@
+/** Add a watermark to te page to indicate caching */
+
+body.is-cached::after {
+    content: "from cache";
+    word-break: keep-all;
+    font-size: 3rem;
+    padding-top: 9rem;
+    line-height: normal;
+    align-content: end;
+    /*color: #0088cc; nice default blue*/
+    color: black;
+    display: block;
+    width: 50vw;
+    height: 50vh;
+    position: absolute;
+    top: 20vh;
+    left: 25vw;
+    background-image: url("icons/bike-fast.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: fadeOut 10s;
+    /* Do no interfere with mouse*/
+    pointer-events: none;
+}
+
+/* Adapt the font size to the screen */
+@media (min-width: 900px) {
+    body.is-cached::after {
+        font-size: 5rem;
+        padding-top: 11rem;
+    }
+}
+@media (min-width: 1200px) {
+    body.is-cached::after {
+        font-size: 7rem;
+        padding-top: 13rem;
+    }
+}
+
+
+
+@keyframes fadeOut {
+    /* Keep at start */
+    0% {
+        opacity: 0.1;
+    }
+
+    33% {
+        opacity: 0.1;
+    }
+
+    /** Then fade out gradually */
+    100% {
+        opacity: 0;
+    }
+}
+

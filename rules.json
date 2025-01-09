@@ -1,0 +1,53 @@
+[
+  {
+    "id": 10,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "X-Extension",
+          "operation": "set",
+          "value": "nowhow-foswiki-speedify"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "*://*/*",
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame"
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "responseHeaders": [
+        {
+          "header": "cache-control",
+          "operation": "set",
+          "value": "max-age=14400"
+        },
+        {
+          "header": "X-Extension",
+          "operation": "set",
+          "value": "nowhow-foswiki-speedify"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "*://*/*",
+      "domainType": "firstParty",
+      "excludedInitiatorDomains": [
+        "login.microsoftonline.com"
+      ],
+      "resourceTypes": [
+        "main_frame",
+        "sub_frame"
+      ]
+    }
+  }
+]
