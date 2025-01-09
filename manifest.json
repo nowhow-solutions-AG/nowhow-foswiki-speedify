@@ -1,53 +1,46 @@
 {
-	"manifest_version": 3,
-	"name": "Nowhow Foswiki Speedify",
-	"version": "1.0",
-	"description": "Caches all view-only pages from nowhow's Foswiki instance, to speed up navigation.",
-	"icons": {
-			"16": "icons/bike-fast-16.png",
-			"32": "icons/bike-fast-32.png",
-			"48": "icons/bike-fast-48.png",
-			"96": "icons/bike-fast-96.png"
-	},
-	"host_permissions": [
-		"*://*.nowhow.ch/"
-	],
-	"permissions": [
-		"declarativeNetRequestWithHostAccess"
-	],
-	"declarative_net_request": {
-		"rule_resources": [
-			{
-				"id": "ruleset",
-				"enabled": true,
-				"path": "rules.json"
-			},
-			{
-				"id": "updateRuleset",
-				"enabled": false,
-				"path": "updateRules.json"
-			}
-		]
-	},
+    "manifest_version": 3,
+    "name": "Nowhow Foswiki Speedify",
+    "version": "1.1",
+    "description": "Caches all view-only pages from nowhow's Foswiki instance, to speed up navigation.",
+    "icons": {
+        "16": "icons/bike-fast-16.png",
+        "32": "icons/bike-fast-32.png",
+        "48": "icons/bike-fast-48.png",
+        "96": "icons/bike-fast-96.png"
+    },
+    "host_permissions": ["*://*.nowhow.ch/"],
+    "permissions": ["declarativeNetRequestWithHostAccess"],
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "ruleset",
+                "enabled": true,
+                "path": "rules.json"
+            },
+            {
+                "id": "updateRuleset",
+                "enabled": false,
+                "path": "updateRules.json"
+            }
+        ]
+    },
 
-	"content_scripts": [
-		{
-			"matches": [
-				"*://*.nowhow.ch/*/foswiki/bin/*"
-			],
-			"js": [
-				"speedify.js"
-			],
-			"css": [
-				"speedify.css"
-			]
-		}
-	],
+    "content_scripts": [
+        {
+            "matches": ["*://*.nowhow.ch/*/foswiki/bin/*"],
+            "js": ["speedify.js"],
+            "css": ["speedify.css"]
+        }
+    ],
 
-	"browser_specific_settings": {
-		"gecko": {
-			"id": "nowhow-foswiki-speedify@nowhow.ch"
-		},
-		"gecko_android": {}
-	}
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "nowhow-foswiki-speedify@nowhow.ch",
+            "update_url": "https://example.com/updates.json"
+        },
+        "gecko_android": {
+            "update_url": "https://example.com/updates.json"
+        }
+    }
 }

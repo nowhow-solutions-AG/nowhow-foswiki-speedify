@@ -1,0 +1,13 @@
+{
+    "addons": {
+      "nowhow-foswiki-speedify@nowhow.ch": {
+        "updates": [
+          {
+            "version": "1.0",
+            "update_link": "https://github.com/nowhow-solutions-AG/nowhow-foswiki-speedify/releases/download/v1.0.0/nowhow-foswiki-speedify-1.0.0.zip",
+            "update_info_url": "https://github.com/nowhow-solutions-AG/nowhow-foswiki-speedify/releases/tag/v1.0.0"
+          }
+        ]
+      }
+    }
+  }
